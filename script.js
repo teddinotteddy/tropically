@@ -31,9 +31,9 @@ function getWeather() {
       .then(data => {
         console.log(data);
         let temp = data.main.temp;
-        temperature.innerHTML = temp + "° F";
         location.innerHTML =
           data.name;
+        temperature.innerHTML = temp + "° F";
         description.innerHTML = data.weather[0].main;
       });
   }
