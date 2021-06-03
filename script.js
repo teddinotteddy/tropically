@@ -33,8 +33,7 @@ function getWeather() {
         let temp = data.main.temp;
         temperature.innerHTML = temp + "° F";
         location.innerHTML =
-        if ("data.name" === "rain") {
-          "It's a bit rainy, I would advise a umbrella." }
+        data.name;
         description.innerHTML = data.weather[0].main;
       });
   }
