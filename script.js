@@ -1,6 +1,7 @@
-var today = getDay();
+var today = new Date();
+var day = getDay();
 var time = today.getHours() + ":" + today.getMinutes()
-var dateTime = today+' - '+time;
+var dateTime = day+' - '+time;
 date.innerHTML = dateTime;
 
 function getWeather() {
