@@ -44,14 +44,14 @@ function getWeather() {
       .then(data => {
         console.log(data);
         let temp = data.main.temp;
+        let high = data.main.temp_max;
+        let low = data.main.temp_min;
         let feels_like = data.main.feels_like;
         temperature.innerHTML = temp + " °F" + " (Feels like: " + feels_like + " °F)";
-        location.innerHTML =
-        data.name;
+        feels.innerHTML = "High: " + high + ", Low: " + low; 
+        location.innerHTML = data.name;
         let humidity = data.main.humidity;
-        let high = data.main.temp_max;
-        let low = data.main.temp_min
-        description.innerHTML = data.weather[0].main + ", Humidity: " + humidity + ", High: " + high + ", Low: " + low;
+        description.innerHTML = data.weather[0].main + ", Humidity: " + humidity;
       });
   }
 
