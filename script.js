@@ -40,6 +40,7 @@ function getWeather() {
         temperature.innerHTML = temp + "° F";
         location.innerHTML =
         data.name;
+        let humidity = data.main.humidity;
         description.innerHTML = data.weather[0].main + "Humidity:" + humidity;
       });
   }
