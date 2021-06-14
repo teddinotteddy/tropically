@@ -1,7 +1,6 @@
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-var d = new Date(dateString);
-var dayName = days[d.getDay()];
-var today = new Date();
+var today = new Date(dateString);
+var dayName = days[today.getDay()];
 var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes();
 var dateTime = dayName + " - " date + " - " + time;
