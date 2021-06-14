@@ -53,7 +53,6 @@ function getWeather() {
         location.innerHTML = data.name;
         let humidity = data.main.humidity;
         description.innerHTML = "Description: " + data.weather[0].description + ", Humidity: " + humidity + ", Wind Speed: " + data.wind.speed + " mph";
-        document.write(<img scr="http://openweathermap.org/img/wn/10d@2x.png"/>)
       });
   }
 
