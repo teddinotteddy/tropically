@@ -12,6 +12,7 @@ window.setInterval(function() {
   getTime()
 }, 1000);
 
+$(".icon").html("<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png' alt='Icon depicting current weather.'>");
 
 function getWeather() {
   let temperature = document.getElementById("temperature");
