@@ -1,7 +1,10 @@
 var today = new Date();
+var now = today.getDay();
+var days = ["Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Saturday", "Sunday"];
+var day = days[now];
 var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes();
-var dateTime = date + " - " + time;
+var dateTime = day + " - " + date + " - " + time;
 timing.innerHTML = dateTime;
 
 function getWeather() {
@@ -38,7 +41,7 @@ function getWeather() {
         console.log(data);
         let temp = data.main.temp;
         let feels_like = data.main.feels_like;
-        temperature.innerHTML = temp + " °F" + " (Feels like: " + feels_like + ")";
+        temperature.innerHTML = temp + " °F" + " (Feels like: " + feels_like + " °F)";
         location.innerHTML =
         data.name;
         let humidity = data.main.humidity;
