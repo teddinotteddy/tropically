@@ -1,7 +1,10 @@
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var d = new Date(dateString);
+var dayName = days[d.getDay()];
 var today = new Date();
 var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes();
-var dateTime = date+' - '+time;
+var dateTime = dayName + " - " date + " - " + time;
 timing.innerHTML = dateTime;
 
 function getWeather() {
