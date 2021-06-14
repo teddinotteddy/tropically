@@ -53,6 +53,7 @@ function getWeather() {
         location.innerHTML = data.name;
         let humidity = data.main.humidity;
         description.innerHTML = "Description: " + data.weather[0].description + ", Humidity: " + humidity + ", Wind Speed: " + data.wind.speed + " mph";
+        weatherIcon.innerHTML = <img scr="icons/${weather.iconId}.png"/>;
       });
   }
 
