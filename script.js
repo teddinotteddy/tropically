@@ -53,9 +53,6 @@ function getWeather() {
         location.innerHTML = data.name;
         let humidity = data.main.humidity;
         description.innerHTML = "Description: " + data.weather[0].description + ", Humidity: " + humidity + ", Wind Speed: " + data.wind.speed + " mph";
-        var weatherIcons = document.createElement("img");
-        console.log(weatherIcons.scr = data.weather.[0].icon + ".png");
-        document.body.appendChild(weatherIcons);
       });
   }
 
