@@ -48,7 +48,7 @@ function getWeather() {
         let low = data.main.temp_min;
         let feels_like = data.main.feels_like;
         temperature.innerHTML = temp + " °F" + " (Feels like: " + feels_like + " °F)";
-        feels.innerHTML = "High: " + high + ", Low: " + low; 
+        feels.innerHTML = "High: " + high + " °F" + ", Low: " + low + " °F"; 
         location.innerHTML = data.name;
         let humidity = data.main.humidity;
         description.innerHTML = data.weather[0].main + ", Humidity: " + humidity;
