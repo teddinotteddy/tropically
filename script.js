@@ -49,7 +49,9 @@ function getWeather() {
         location.innerHTML =
         data.name;
         let humidity = data.main.humidity;
-        description.innerHTML = data.weather[0].main + ", Humidity: " + humidity;
+        let high = data.main.temp_max;
+        let low = data.main.temp_min
+        description.innerHTML = data.weather[0].main + ", Humidity: " + humidity + ", High: " + high + ", Low: " + low;
       });
   }
 
