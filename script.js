@@ -1,8 +1,8 @@
 var today = new Date();
-var day = getDay();
+var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes()
 var dateTime = day+' - '+time;
-date.innerHTML = dateTime;
+now.innerHTML = dateTime;
 
 function getWeather() {
   let temperature = document.getElementById("temperature");
