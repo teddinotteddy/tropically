@@ -53,7 +53,7 @@ function getWeather() {
         feels.innerHTML = "High: " + high + " °F" + ", Low: " + low + " °F";
         location.innerHTML = data.name;
         let humidity = data.main.humidity;
-        description.innerHTML = "Description: " + data.weather[0].description + ", Humidity: " + humidity + "Wind Speed: " + data.wind.speed;
+        description.innerHTML = "Description: " + data.weather[0].description + ", Humidity: " + humidity + ", Wind Speed: " + data.wind.speed + " mph";
       });
   }
 
