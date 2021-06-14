@@ -37,7 +37,8 @@ function getWeather() {
       .then(data => {
         console.log(data);
         let temp = data.main.temp;
-        temperature.innerHTML = temp + "° F";
+        let feels_like = data.main.feels_like;
+        temperature.innerHTML = temp + "° F" + " (Feels like: " + feels_like + ")";
         location.innerHTML =
         data.name;
         let humidity = data.main.humidity;
