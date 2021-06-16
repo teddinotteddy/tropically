@@ -53,6 +53,9 @@ function getWeather() {
         location.innerHTML = data.name;
         let humidity = data.main.humidity;
         description.innerHTML = "Description: " + data.weather[0].description + ", Humidity: " + humidity + ", Wind Speed: " + data.wind.speed + " mph";
+        if (temp > 80) {
+          remark.innerHTML = "Hot out there, I'd take a dip in a pool or something. "
+        };
       });
   }
 
