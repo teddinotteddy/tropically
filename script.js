@@ -59,6 +59,9 @@ function getWeather() {
         else if (temp < 65) {
           remark.innerHTML = "Little bit chilly, you should take a sweater or jacket."
         }
+        else {
+          remark.innerHTML = "Nice weather, I would recommend going to the park."
+        }
       });
   }
 
