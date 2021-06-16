@@ -74,15 +74,15 @@ function getWeather() {
         var tempMid = ["Nice weather, I would recommend going to the park.", "To put it simply, it's room temperature.", "I would go outside and get some fresh air."]
         var randomHigh = tempHigh[Math.floor(Math.random() * tempHigh.length)];
         var randomLow = tempLow[Math.floor(Math.random() * tempLow.length)];
-        var randomLow = tempMid[Math.floor(Math.random() * tempMid.length)];
+        var randomMid = tempMid[Math.floor(Math.random() * tempMid.length)];
         if (temp > 80) {
           remark.innerHTML = randomHigh
         }
         else if (temp < 65) {
-          remark.innerHTML =
+          remark.innerHTML = randomLow
         }
         else {
-          remark.innerHTML =
+          remark.innerHTML = randomMid
         }
       });
   }
