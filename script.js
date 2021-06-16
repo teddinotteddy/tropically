@@ -1,7 +1,7 @@
 function getTime() {
   var today = new Date();
   var now = today.getDay();
-  var days = ["Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Saturday", "Sunday"];
+  var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   var day = days[now - 1];
   var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
   var time = today.getHours() + ":" + today.getMinutes();
