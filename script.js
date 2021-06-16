@@ -51,16 +51,22 @@ function getWeather() {
         temperature.innerHTML = temp + " °F" + " (Feels like: " + feels_like + " °F)";
         feels.innerHTML = "High: " + high + " °F" + ", Low: " + low + " °F";
         location.innerHTML = data.name;
-        let humidity = data.main.humidity;
+        var humidity = data.main.humidity;
         description.innerHTML = "Description: " + data.weather[0].description + ", Humidity: " + humidity + ", Wind Speed: " + data.wind.speed + " mph";
+        var tempHigh = ["Hot out there, I'd take a dip in a pool or something.", "A little bit toasty.", "Not what I would call room temperature."];
+        var tempLow = ["Little bit chilly, you should take a sweater or jacket.", "Cooler then I would like.", "Chilly right?"];
+        var tempMid = ["Nice weather, I would recommend going to the park.", "To put it simply, it's room temperature.", "I would go outside and get some fresh air."]
+        var randomHigh = tempHigh[Math.floor(Math.random() * tempHigh.length)];
+        var randomLow = tempLow[Math.floor(Math.random() * tempLow.length)];
+        var randomLow = tempMid[Math.floor(Math.random() * tempMid.length)];
         if (temp > 80) {
-          remark.innerHTML = "Hot out there, I'd take a dip in a pool or something."
+          remark.innerHTML = randomHigh
         }
         else if (temp < 65) {
-          remark.innerHTML = "Little bit chilly, you should take a sweater or jacket."
+          remark.innerHTML =
         }
         else {
-          remark.innerHTML = "Nice weather, I would recommend going to the park."
+          remark.innerHTML =
         }
       });
   }
