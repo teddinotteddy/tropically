@@ -17,8 +17,9 @@ function getWeather() {
   let description = document.getElementById("description");
   let location = document.getElementById("location");
 
-  let api = "https://api.openweathermap.org/data/2.5/weather";
+  let weather_api = "https://api.openweathermap.org/data/2.5/weather";
   let apiKey = "ca676571878294269458ad76e22c6693";
+  let aq_api = "https://api.openweathermap.org/data/2.5/air_pollution";
 
   location.innerHTML = "Locating...";
 
@@ -29,7 +30,7 @@ function getWeather() {
     longitude = position.coords.longitude;
 
     let weather_url =
-      api +
+      weather_api +
       "?lat=" +
       latitude +
       "&lon=" +
@@ -37,6 +38,18 @@ function getWeather() {
       "&appid=" +
       apiKey +
       "&units=imperial";
+
+    let aq_url =
+      aq_api +
+      "?lat=" +
+      latitude +
+      "&lon=" +
+      longitude +
+      "&appid=" +
+      apiKey +
+      "&units=imperial";
+
+
 
       console.log(weather_url)
 
@@ -68,12 +81,20 @@ function getWeather() {
         else {
           remark.innerHTML = randomMid
         }
-      });
+        function getAqi() {
+          fetch(aq_url)
+    .then(response => response.json())
+    .then(data =>
+      console.log(data))
+      aqi.innerHTML = data.main.aqi
+}
+        getAqi()
+      })
   }
 
   function error() {
     location.innerHTML = "Unable to retrieve your location";
   }
-}
+};
 
 getWeather();
