@@ -28,7 +28,7 @@ function getWeather() {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
-    let url =
+    let weather_url =
       api +
       "?lat=" +
       latitude +
@@ -38,9 +38,9 @@ function getWeather() {
       apiKey +
       "&units=imperial";
 
-      console.log(url)
+      console.log(weather_url)
 
-    fetch(url)
+    fetch(weather_url)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -59,7 +59,7 @@ function getWeather() {
         var randomHigh = tempHigh[Math.floor(Math.random() * tempHigh.length)];
         var randomLow = tempLow[Math.floor(Math.random() * tempLow.length)];
         var randomMid = tempMid[Math.floor(Math.random() * tempMid.length)];
-        if (temp > 80) {
+        if (temp > 85) {
           remark.innerHTML = randomHigh
         }
         else if (temp < 65) {
