@@ -81,15 +81,16 @@ function getWeather() {
         else {
           remark.innerHTML = randomMid
         }
+})
         function getAqi() {
           fetch(aq_url)
     .then(response => response.json())
-    .then(data =>
-      console.log(data))
-      aqi.innerHTML = data.main.aqi
-}
-        getAqi()
-      })
+    .then(data => {
+      console.log(data);
+      console.log(data.main.aqi);
+    })
+  }
+    getAqi()
   }
 
   function error() {
