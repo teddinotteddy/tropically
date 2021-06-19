@@ -1,3 +1,5 @@
+
+
 function getTime() {
   var today = new Date();
   var now = today.getDay();
@@ -12,12 +14,18 @@ window.setInterval(function() {
   getTime()
 }, 1000);
 
+function getInfo() {
+
+
+
+}
+
 function getWeather() {
   let temperature = document.getElementById("temperature");
   let description = document.getElementById("description");
   let location = document.getElementById("location");
 
-  let weather_api = "https://api.openweathermap.org/data/2.5/weather";
+  let weather_api = "https://api.openweathermap.org/data/2.5/onecall";
   let apiKey = "ca676571878294269458ad76e22c6693";
   let aq_api = "https://api.openweathermap.org/data/2.5/air_pollution";
 
@@ -49,23 +57,41 @@ function getWeather() {
       apiKey +
       "&units=imperial";
 
-
-
       console.log(weather_url)
 
     fetch(weather_url)
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        let temp = data.main.temp;
-        let high = data.main.temp_max;
-        let low = data.main.temp_min;
-        let feels_like = data.main.feels_like;
-        temperature.innerHTML = temp + " °F" + " (Feels like: " + feels_like + " °F)";
-        feels.innerHTML = "High: " + high + " °F" + ", Low: " + low + " °F";
-        location.innerHTML = data.name;
-        var humidity = data.main.humidity;
-        description.innerHTML = "Description: " + data.weather[0].description + ", Humidity: " + humidity + ", Wind Speed: " + data.wind.speed + " mph";
+        let temp = Math.round(data.current.temp);
+        let {humidity, pressure, sunrise, sunset, wind_speed, dew_point, clouds, uvi, feels_like} = data.current;
+        let api = "https://api.openweathermap.org/data/2.5/weather";
+        let info_url =
+          api +
+          "?lat=" +
+          latitude +
+          "&lon=" +
+          longitude +
+          "&appid=" +
+          apiKey +
+          "&units=imperial";
+
+          let area = "";
+          let description = "";
+
+          fetch(info_url)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            let area = data.name;
+            let description = data.weather[0].main;
+            location.innerHTML = area;
+            typeofweather.innerHTML = "Description: " + description + ",";
+          });
+        temperature.innerHTML = temp + " °F" + " (Feels like: " + Math.round(feels_like) + " °F)";
+        weatherdescription.innerHTML = "Wind Speed: " + wind_speed + " mph" + ", UV Index: " + uvi + ", Cloud Cover: " + clouds +"%";
+        precipitation.innerHTML = "Humidity: " + humidity + ", Dew Point: " + dew_point;
+        console.log("http://openweathermap.org/img/wn/"+ data.current.weather.icon + "@2x.png")
         var tempHigh = ["Hot out there, I'd take a dip in a pool or something.", "A little bit toasty.", "Not what I would call room temperature."];
         var tempLow = ["Little bit chilly, you should take a sweater or jacket.", "Cooler then I would like.", "Chilly right?"];
         var tempMid = ["Nice weather, I would recommend going to the park.", "To put it simply, it's room temperature.", "I would go outside and get some fresh air."]
@@ -81,17 +107,18 @@ function getWeather() {
         else {
           remark.innerHTML = randomMid
         }
+
+
 })
-        function getAqi() {
-          fetch(aq_url)
+  function getAqi() {
+    fetch(aq_url)
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      console.log(data.main.aqi);
     })
   }
     getAqi()
-  }
+}
 
   function error() {
     location.innerHTML = "Unable to retrieve your location";
