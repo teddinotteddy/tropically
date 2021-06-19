@@ -14,12 +14,6 @@ window.setInterval(function() {
   getTime()
 }, 1000);
 
-function getInfo() {
-
-
-
-}
-
 function getWeather() {
   let temperature = document.getElementById("temperature");
   let description = document.getElementById("description");
