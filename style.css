@@ -2,7 +2,6 @@ html {
   font-family: arial;
   text-align: center;
   color: white;
-  background: black;
 }
 
 body {
@@ -11,4 +10,14 @@ body {
 
 a {
   color: white;
+}
+
+::selection {
+  background-color: cyan;
+}
+
+html {
+  background-image: url('tropicallybackground.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 1000%;
 }
