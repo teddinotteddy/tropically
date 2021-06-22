@@ -1,11 +1,12 @@
 function getTime() {
   var today = new Date();
   var now = today.getDay();
-  console.log(now)
-  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
-  var day = (now === 0) ? days[0]: days[now-1];
+  var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  var day = days[now-1];
   var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
-  var time = today.getHours() + ":" + today.getMinutes();
+  var hour = today.getHours();
+  var hoursIn12HrFormat = hour >= 13 ? hour %12: hour;
+  var time =  hoursIn12HrFormat + ":" + today.getMinutes();
   var dateTime = day + " - " + date + " - " + time;
   timing.innerHTML = dateTime;
 }
@@ -20,7 +21,6 @@ function getWeather() {
 
   let weather_api = "https://api.openweathermap.org/data/2.5/onecall";
   let apiKey = "ca676571878294269458ad76e22c6693";
-  let aq_api = "https://api.openweathermap.org/data/2.5/air_pollution";
 
   location.innerHTML = "Locating...";
 
@@ -32,16 +32,6 @@ function getWeather() {
 
     let weather_url =
       weather_api +
-      "?lat=" +
-      latitude +
-      "&lon=" +
-      longitude +
-      "&appid=" +
-      apiKey +
-      "&units=imperial";
-
-    let aq_url =
-      aq_api +
       "?lat=" +
       latitude +
       "&lon=" +
@@ -82,7 +72,9 @@ function getWeather() {
             typeofweather.innerHTML = "Description: " + description + ",";
           });
         temperature.innerHTML = temp + " °F" + " (Feels like: " + Math.round(feels_like) + " °F)";
-        weatherdescription.innerHTML = "Wind Speed: " + wind_speed + " mph" + ", UV Index: " + uvi + ", Cloud Cover: " + clouds +"%";
+        windspeed.innerHTML = "Wind Speed: " + wind_speed + " mph";
+        uvindex.innerHTML = "UV Index: " + uvi;
+        cloudcover.innerHTML = "Cloud Cover: " + clouds +"%"
         precipitation.innerHTML = "Humidity: " + humidity + ", Dew Point: " + dew_point;
         console.log("http://openweathermap.org/img/wn/"+ data.current.weather.icon + "@2x.png")
         var tempHigh = ["Hot out there, I'd take a dip in a pool or something.", "A little bit toasty.", "Not what I would call room temperature."];
@@ -100,17 +92,9 @@ function getWeather() {
         else {
           remark.innerHTML = randomMid
         }
-
-
-})
-  function getAqi() {
-    fetch(aq_url)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-    })
-  }
-    getAqi()
+        let nextDay = data.daily;
+        console.log(nextDay)
+      })
 }
 
   function error() {
