@@ -30,5 +30,29 @@ html {
   border-color: white;
   border-radius: 10px;
   border-style: solid;
-  display: none;
+}
+
+p {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+p1 {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+p2 {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+p3 {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+p4 {
+  font-weight: normal;
+  font-size: 16px;
 }
