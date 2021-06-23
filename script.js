@@ -20,6 +20,7 @@ function getWeather() {
   let location = document.getElementById("location");
 
   let weather_api = "https://api.openweathermap.org/data/2.5/onecall";
+  let aq_api = "https://api.openweathermap.org/data/2.5/air_pollution";
   let apiKey = "ca676571878294269458ad76e22c6693";
 
   location.innerHTML = "Locating...";
@@ -32,6 +33,16 @@ function getWeather() {
 
     let weather_url =
       weather_api +
+      "?lat=" +
+      latitude +
+      "&lon=" +
+      longitude +
+      "&appid=" +
+      apiKey +
+      "&units=imperial";
+
+      let aq_url =
+      aq_api +
       "?lat=" +
       latitude +
       "&lon=" +
@@ -101,6 +112,16 @@ function getWeather() {
         nextdayuvi.innerHTML = "UV Index: " + data.daily[1].uvi;
         console.log(data.daily);
       })
+  function getAqi() {
+          fetch(aq_url)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            let aqi = data.list[0].main.aqi;
+            airqualityindex.innerHTML = "Air Quality Index: " + aqi;
+        })
+      }
+  getAqi()
 }
 
   function error() {
