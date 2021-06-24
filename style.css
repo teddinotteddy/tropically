@@ -3,9 +3,14 @@ html {
   color: white;
   text-align: center;
   float: center;
-  background-image: url(tropicallybackground.jpg);
-  background-size: cover;
-  background-repeat: none;
+  min-height: 100vh;
+  background: linear-gradient(to right top,#65DFC9, #6CDBEB)
+}
+
+body {
+  background: white;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  border-radius: 1rem;
 }
 
 ::selection {
