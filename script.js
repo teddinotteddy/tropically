@@ -56,9 +56,6 @@ function getWeather() {
     fetch(weather_url)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
-        let temp = Math.round(data.current.temp);
-        let {humidity, pressure, sunrise, sunset, wind_speed, dew_point, clouds, uvi, feels_like} = data.current;
         let api = "https://api.openweathermap.org/data/2.5/weather";
         let info_url =
           api +
@@ -69,27 +66,29 @@ function getWeather() {
           "&appid=" +
           apiKey +
           "&units=imperial";
-
-          let area = "";
-          let description = "";
-
-          fetch(info_url)
+        fetch(info_url)
           .then(response => response.json())
           .then(data => {
             console.log(data);
             let area = data.name;
-            let description = data.weather[0].description;
             location.innerHTML = area;
-            typeofweather.innerHTML = "Description: " + description + ",";
-          });
+        });
+        console.log(data);
+        let temp = Math.round(data.current.temp);
+        let {humidity, pressure, sunrise, sunset, wind_speed, dew_point, clouds, uvi, feels_like} = data.current;
+        let area = data.current.location;
+        let description = data.current.weather[0].description;
+        location.innerHTML = area;
+        typeofweather.innerHTML = "Description: " + description + ",";
         temperature.innerHTML = temp + " °F" + " (Feels like: " + Math.round(feels_like) + " °F)";
         windspeed.innerHTML = "Wind Speed: " + wind_speed + " mph";
         uvindex.innerHTML = "UV Index: " + uvi;
         cloudcover.innerHTML = "Cloud Cover: " + clouds + "%"
         precipitation.innerHTML = "Humidity: " + humidity + "%" + ", Dew Point: " + dew_point + ", PoP: " + data.hourly[1].pop + "%";
+        weatheralerts.innerHTML = data.alerts[0].event + " from: " + data.alerts[0].sender_name + data.alerts[0].description;
         var tempHigh = ["Hot out there, I'd take a dip in a pool or something.", "A little bit toasty.", "Not what I would call room temperature."];
         var tempLow = ["Little bit chilly, you should take a sweater or jacket.", "Cooler then I would like.", "Chilly right?"];
-        var tempMid = ["Nice weather, I would recommend going to the park.", "To put it simply, it's room temperature.", "I would go outside and get some fresh air."]
+        var tempMid = ["Nice weather, I would recommend going to the park.", "To put it simply, it's room temperature.", "I would go outside and get some fresh air.", "Nice weather, go touch some grass."]
         var randomHigh = tempHigh[Math.floor(Math.random() * tempHigh.length)];
         var randomLow = tempLow[Math.floor(Math.random() * tempLow.length)];
         var randomMid = tempMid[Math.floor(Math.random() * tempMid.length)];
