@@ -85,10 +85,6 @@ function getWeather() {
         uvindex.innerHTML = "UV Index: " + uvi;
         cloudcover.innerHTML = "Cloud Cover: " + clouds + "%"
         precipitation.innerHTML = "Humidity: " + humidity + "%" + ", Dew Point: " + dew_point + ", PoP: " + data.hourly[1].pop + "%";
-        alertsData = data.alerts[0]
-        if (typeof alertsData !== 'undefined') {
-        }
-        weatheralerts.innerHTML = alertsData.event + " from: " + alertsData.sender_name + alertsData.description;
         var tempHigh = ["Hot out there, I'd take a dip in a pool or something.", "A little bit toasty.", "Not what I would call room temperature."];
         var tempLow = ["Little bit chilly, you should take a sweater or jacket.", "Cooler then I would like.", "Chilly right?"];
         var tempMid = ["Nice weather, I would recommend going to the park.", "To put it simply, it's room temperature.", "I would go outside and get some fresh air.", "Nice weather, go touch some grass."]
