@@ -83,7 +83,7 @@ function getWeather() {
         temperature.innerHTML = temp + " °F" + " (Feels like: " + Math.round(feels_like) + " °F)";
         let minTemp = data.daily[0].temp.min;
         let maxTemp = data.daily[0].temp.max;
-        minMax.innerHTML = "Min: " + minTemp + " °F" + ", Max: " + maxTemp + " °F";
+        minMax.innerHTML = "Min: " + Math.round(minTemp)+ " °F" + ", Max: " + Math.round(maxTemp) + " °F";
         windspeed.innerHTML = "Wind Speed: " + wind_speed + " mph";
         uvindex.innerHTML = "UV Index: " + uvi;
         cloudcover.innerHTML = "Cloud Cover: " + clouds + "%"
@@ -105,7 +105,7 @@ function getWeather() {
         }
         let tomorrowMinTemp = data.daily[1].temp.min;
         let tomorrowMaxTemp = data.daily[1].temp.max;
-        tomorrowMinMax.innerHTML = "Min: " + tomorrowMinTemp + " °F" + ", Max: " + tomorrowMaxTemp + " °F";
+        tomorrowMinMax.innerHTML = "Min: " + Math.round(tomorrowMinTemp) + " °F" + ", Max: " + Math.round(tomorrowMaxTemp) + " °F";
         let nextDayTemp = data.daily[1].temp.day;
         nextdaytemp.innerHTML = Math.round(nextDayTemp) + " °F";
         nextdaydescription.innerHTML = data.daily[1].weather[0].description;
