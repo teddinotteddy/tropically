@@ -85,9 +85,9 @@ function getWeather() {
         let maxTemp = data.daily[0].temp.max;
         minMax.innerHTML = "Min: " + Math.round(minTemp)+ " °F" + ", Max: " + Math.round(maxTemp) + " °F";
         windspeed.innerHTML = "Wind Speed: " + wind_speed + " mph";
-        uvindex.innerHTML = "UV Index: " + uvi;
+        uvindex.innerHTML = "UV Index: " + Math.round(uvi);
         cloudcover.innerHTML = "Cloud Cover: " + clouds + "%"
-        precipitation.innerHTML = "Humidity: " + humidity + "%" + ", Chance of Rain: " + data.hourly[1].pop + "%";
+        precipitation.innerHTML = "Humidity: " + humidity + "%" + ", Chance of Rain: " + 100 * data.hourly[1].pop + "%";
         var tempHigh = ["Hot out there, I'd take a dip in a pool or something.", "A little bit toasty.", "Not what I would call room temperature."];
         var tempLow = ["Little bit chilly, you should take a sweater or jacket.", "Cooler then I would like.", "Chilly right?"];
         var tempMid = ["Nice weather, I would recommend going to the park.", "To put it simply, it's room temperature.", "I would go outside and get some fresh air.", "Nice weather, go touch some grass."]
@@ -111,9 +111,9 @@ function getWeather() {
         nextdaydescription.innerHTML = data.daily[1].weather[0].description;
         let nextDayHumidity = data.daily[1].humidity;
         let nextDayDewPoint = data.daily[1].dew_point;
-        nextdaypercipation.innerHTML = "Humidity: " + nextDayHumidity + "%" + " , Chance of Rain: " + data.daily[1].pop + "%";
+        nextdaypercipation.innerHTML = "Humidity: " + nextDayHumidity + "%" + " , Chance of Rain: " + 100 * data.daily[1].pop + "%";
         nextdaycloudcover.innerHTML = "Cloud Cover: " + data.daily[1].clouds + "%";
-        nextdayuvi.innerHTML = "UV Index: " + data.daily[1].uvi;
+        nextdayuvi.innerHTML = "UV Index: " + Math.round(data.daily[1].uvi);
         console.log(data.daily);
       })
   function getAqi() {
