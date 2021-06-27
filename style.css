@@ -63,3 +63,21 @@ p4 {
   font-weight: normal;
   font-size: 16px;
 }
+
+.weeklyweather {
+  max-height: 150px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.weeklyweather .item {
+  min-width: 200px;
+  margin-top: 50px;
+  height: 150px;
+  vertical-align: 75px;
+  text-align: center;
+  border: 5px;
+  border-color: white;
+  border-radius: 10px;
+  color: white;
+}

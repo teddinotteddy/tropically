@@ -115,6 +115,27 @@ function getWeather() {
         nextdaycloudcover.innerHTML = "Cloud Cover: " + data.daily[1].clouds + "%";
         nextdayuvi.innerHTML = "UV Index: " + Math.round(data.daily[1].uvi);
         console.log(data.daily);
+          function getWeeksWeather() {
+            var today = new Date();
+            var now = today.getDay();
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let day3Day = (now + 2 > 6) ? now + 2 - 7: now + 2;
+            let day4Day = (now + 3 > 6) ? now + 3 - 7: now + 3;
+            let day5Day = (now + 4 > 6) ? now + 4 - 7: now + 4;
+            let day6Day = (now + 5 > 6) ? now + 5 - 7: now + 5;
+            let day7Day = (now + 6 > 6) ? now + 6 - 7: now + 6;
+            day3Title.innerHTML = days[day3Day];
+            day3.innerHTML = "Min: " + Math.round(data.daily[2].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[2].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[2].pop + "%  " + data.daily[2].weather[0].description;
+            day4Title.innerHTML = days[day4Day];
+            day4.innerHTML = "Min: " + Math.round(data.daily[3].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[3].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[3].pop + "%  " + data.daily[3].weather[0].description;
+            day5Title.innerHTML = days[day5Day];
+            day5.innerHTML = "Min: " + Math.round(data.daily[4].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[4].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[4].pop + "%  " + data.daily[4].weather[0].description;
+            day6Title.innerHTML = days[day6Day];
+            day6.innerHTML = "Min: " + Math.round(data.daily[5].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[5].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[5].pop + "%  " + data.daily[5].weather[0].description;
+            day7Title.innerHTML = days[day7Day];
+            day7.innerHTML = "Min: " + Math.round(data.daily[6].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[6].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[6].pop + "%  " + data.daily[6].weather[0].description;
+          }
+        getWeeksWeather()
       })
   function getAqi() {
           fetch(aq_url)
