@@ -72,12 +72,13 @@ p4 {
 
 .weeklyweather .item {
   min-width: 200px;
-  margin-top: 50px;
+  margin-top: 3.5px;
   height: 150px;
-  vertical-align: 75px;
   text-align: center;
+}
+
+.weeklyweather .item {
   border: 5px;
   border-color: white;
   border-radius: 10px;
-  color: white;
 }
