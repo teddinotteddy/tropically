@@ -3,7 +3,7 @@ function getTime() {
   var now = today.getDay();
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var day = days[now];
-  var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+  var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
   var hour = today.getHours();
   var hoursIn12HrFormat = hour >= 13 ? hour %12: hour;
   var time =  hoursIn12HrFormat + ":" + today.getMinutes();
