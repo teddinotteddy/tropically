@@ -104,10 +104,29 @@ function getWeather() {
           remark.innerHTML = randomMid
         }
         function getWeatherIcon() {
-          let weatherIcons = ["Weather Icons/Cloudy.SVG", "Weather Icons/Drizzle.SVG", "Weather Icons/PartlyCloudy.SVG", "Weather Icons/Rain.SVG", "Weather Icons/Snow.SVG", "Weather Icons/Sunny.SVG", "Weather Icons/Thunder.SVG"];
-          let weatherIconId = (description = "Rain") ? 3: (description = "Drizzle") ? 1: (description = "Clouds") ? 0: (description = "Snow") ? 4: (description = "Clear") ? 5: (description = "Thunderstorm") ? 6: 5;
-          console.log(weatherIconId)
-          document.getElementById("weatherIcon").src = weatherIcons[weatherIconId];
+          let weatherIcons = ["Weather Icons/Cloudy.SVG", "Weather Icons/Drizzle.SVG", "Weather Icons/Rain.SVG", "Weather Icons/Snow.SVG", "Weather Icons/Sunny.SVG", "Weather Icons/Thunder.SVG"];
+          console.log(data.current.weather[0].main)
+          if (data.current.weather[0].main === "Clouds") {
+            document.getElementById("weatherIcon").src = weatherIcons[0];
+          }
+          else if (data.current.weather[0].main === "Drizzle") {
+            document.getElementById("weatherIcon").src = weatherIcons[1]
+          }
+          else if (data.current.weather[0].main === "Rain") {
+            document.getElementById("weatherIcon").src = weatherIcons[2]
+          }
+          else if (data.current.weather[0].main === "Snow") {
+            document.getElementById("weatherIcon").src = weatherIcons[3]
+          }
+          else if (data.current.weather[0].main === "Clear") {
+            document.getElementById("weatherIcon").src = weatherIcons[4]
+          }
+          else if (data.current.weather[0].main == "Thunderstorm") {
+            document.getElementById("weatherIcon").src = weatherIcons[5]
+          }
+          else {
+            document.getElementById("weatherIcon").src = weatherIcons[4]
+          }
         }
         getWeatherIcon()
         let tomorrowMinTemp = data.daily[1].temp.min;
