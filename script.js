@@ -77,7 +77,7 @@ function getWeather() {
         let temp = Math.round(data.current.temp);
         let {humidity, pressure, sunrise, sunset, wind_speed, dew_point, clouds, uvi, feels_like} = data.current;
         let area = data.current.location;
-        let description = data.current.weather[0].description;
+        let description = data.current.weather[0].main;
         location.innerHTML = area;
         typeofweather.innerHTML = "Description: " + description + ",";
         temperature.innerHTML = temp + " °F" + " (Feels like: " + Math.round(feels_like) + " °F)";
@@ -103,6 +103,13 @@ function getWeather() {
         else {
           remark.innerHTML = randomMid
         }
+        function getWeatherIcon() {
+          let weatherIcons = ["Weather Icons/Cloudy.SVG", "Weather Icons/Drizzle.SVG", "Weather Icons/PartlyCloudy.SVG", "Weather Icons/Rain.SVG", "Weather Icons/Snow.SVG", "Weather Icons/Sunny.SVG", "Weather Icons/Thunder.SVG"];
+          let weatherIconId = (description = "Rain") ? 3: (description = "Drizzle") ? 1: (description = "Clouds") ? 0: (description = "Snow") ? 4: (description = "Clear") ? 5: (description = "Thunderstorm") ? 6: 5;
+          console.log(weatherIconId)
+          document.getElementById("weatherIcon").src = weatherIcons[weatherIconId];
+        }
+        getWeatherIcon()
         let tomorrowMinTemp = data.daily[1].temp.min;
         let tomorrowMaxTemp = data.daily[1].temp.max;
         tomorrowMinMax.innerHTML = "Min: " + Math.round(tomorrowMinTemp) + " °F" + ", Max: " + Math.round(tomorrowMaxTemp) + " °F";
