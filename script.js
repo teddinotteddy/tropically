@@ -103,8 +103,8 @@ function getWeather() {
         else {
           remark.innerHTML = randomMid
         }
-        function getWeatherIcon() {
-          let weatherIcons = ["Weather Icons/Cloudy.SVG", "Weather Icons/Drizzle.SVG", "Weather Icons/Rain.SVG", "Weather Icons/Snow.SVG", "Weather Icons/Sunny.SVG", "Weather Icons/Thunder.SVG"];
+        let weatherIcons = ["Weather Icons/Cloudy.SVG", "Weather Icons/Drizzle.SVG", "Weather Icons/Rain.SVG", "Weather Icons/Snow.SVG", "Weather Icons/Sunny.SVG", "Weather Icons/Thunder.SVG"];
+        function getWeatherIcons() {
           console.log(data.current.weather[0].main)
           if (data.current.weather[0].main === "Clouds") {
             document.getElementById("weatherIcon").src = weatherIcons[0];
@@ -127,14 +127,40 @@ function getWeather() {
           else {
             document.getElementById("weatherIcon").src = weatherIcons[4]
           }
+          function getTomorrowWeatherIcon() {
+          if (data.daily[1].weather[0].main === "Clouds") {
+            document.getElementById("tomorrowWeatherIcon").src = weatherIcons[0];
+          }
+          else if (data.daily[1].weather[0].main === "Drizzle") {
+            document.getElementById("tomorrowWeatherIcon").src = weatherIcons[1]
+          }
+          else if (data.daily[1].weather[0].main === "Rain") {
+            document.getElementById("tomorrowWeatherIcon").src = weatherIcons[2]
+          }
+          else if (data.daily[1].weather[0].main === "Snow") {
+            document.getElementById("tomorrowWeatherIcon").src = weatherIcons[3]
+          }
+          else if (data.daily[1].weather[0].main === "Clear") {
+            document.getElementById("tomorrowWeatherIcon").src = weatherIcons[4]
+          }
+          else if (data.daily[1].weather[0].main == "Thunderstorm") {
+            document.getElementById("tomorrowWeatherIcon").src = weatherIcons[5]
+          }
+          else {
+            document.getElementById("tomorrowWeatherIcon").src = weatherIcons[4]
+          }
         }
-        getWeatherIcon()
+        getTomorrowWeatherIcon()
+      }
+
+      getWeatherIcons()
+
         let tomorrowMinTemp = data.daily[1].temp.min;
         let tomorrowMaxTemp = data.daily[1].temp.max;
         tomorrowMinMax.innerHTML = "Min: " + Math.round(tomorrowMinTemp) + " °F" + ", Max: " + Math.round(tomorrowMaxTemp) + " °F";
         let nextDayTemp = data.daily[1].temp.day;
         nextdaytemp.innerHTML = Math.round(nextDayTemp) + " °F";
-        nextdaydescription.innerHTML = data.daily[1].weather[0].description;
+        nextdaydescription.innerHTML = data.daily[1].weather[0].main;
         let nextDayHumidity = data.daily[1].humidity;
         let nextDayDewPoint = data.daily[1].dew_point;
         nextdaypercipation.innerHTML = "Humidity: " + nextDayHumidity + "%" + " , Chance of Rain: " + 100 * data.daily[1].pop + "%";
@@ -152,14 +178,119 @@ function getWeather() {
             let day7Day = (now + 6 > 6) ? now + 6 - 7: now + 6;
             day3Title.innerHTML = days[day3Day];
             day3.innerHTML = "Min: " + Math.round(data.daily[2].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[2].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[2].pop + "%  " + data.daily[2].weather[0].description;
+            if (data.daily[2].weather[0].main === "Clouds") {
+              document.getElementById("day3WeatherIcon").src = weatherIcons[0];
+            }
+            else if (data.daily[2].weather[0].main === "Drizzle") {
+              document.getElementById("day3WeatherIcon").src = weatherIcons[1]
+            }
+            else if (data.daily[2].weather[0].main === "Rain") {
+              document.getElementById("day3WeatherIcon").src = weatherIcons[2]
+            }
+            else if (data.daily[2].weather[0].main === "Snow") {
+              document.getElementById("day3WeatherIcon").src = weatherIcons[3]
+            }
+            else if (data.daily[2].weather[0].main === "Clear") {
+              document.getElementById("day3WeatherIcon").src = weatherIcons[4]
+            }
+            else if (data.daily[2].weather[0].main == "Thunderstorm") {
+              document.getElementById("day3WeatherIcon").src = weatherIcons[5]
+            }
+            else {
+              document.getElementById("day3WeatherIcon").src = weatherIcons[4]
+            }
             day4Title.innerHTML = days[day4Day];
             day4.innerHTML = "Min: " + Math.round(data.daily[3].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[3].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[3].pop + "%  " + data.daily[3].weather[0].description;
+            if (data.daily[3].weather[0].main === "Clouds") {
+              document.getElementById("day4WeatherIcon").src = weatherIcons[0];
+            }
+            else if (data.daily[3].weather[0].main === "Drizzle") {
+              document.getElementById("day4WeatherIcon").src = weatherIcons[1]
+            }
+            else if (data.daily[3].weather[0].main === "Rain") {
+              document.getElementById("day4WeatherIcon").src = weatherIcons[2]
+            }
+            else if (data.daily[3].weather[0].main === "Snow") {
+              document.getElementById("day4WeatherIcon").src = weatherIcons[3]
+            }
+            else if (data.daily[3].weather[0].main === "Clear") {
+              document.getElementById("day4WeatherIcon").src = weatherIcons[4]
+            }
+            else if (data.daily[3].weather[0].main == "Thunderstorm") {
+              document.getElementById("day4WeatherIcon").src = weatherIcons[5]
+            }
+            else {
+              document.getElementById("day4WeatherIcon").src = weatherIcons[4]
+            }
             day5Title.innerHTML = days[day5Day];
             day5.innerHTML = "Min: " + Math.round(data.daily[4].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[4].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[4].pop + "%  " + data.daily[4].weather[0].description;
+            if (data.daily[4].weather[0].main === "Clouds") {
+              document.getElementById("day5WeatherIcon").src = weatherIcons[0];
+            }
+            else if (data.daily[4].weather[0].main === "Drizzle") {
+              document.getElementById("day5WeatherIcon").src = weatherIcons[1]
+            }
+            else if (data.daily[4].weather[0].main === "Rain") {
+              document.getElementById("day5WeatherIcon").src = weatherIcons[2]
+            }
+            else if (data.daily[4].weather[0].main === "Snow") {
+              document.getElementById("day5WeatherIcon").src = weatherIcons[3]
+            }
+            else if (data.daily[4].weather[0].main === "Clear") {
+              document.getElementById("day5WeatherIcon").src = weatherIcons[4]
+            }
+            else if (data.daily[4].weather[0].main == "Thunderstorm") {
+              document.getElementById("day5WeatherIcon").src = weatherIcons[5]
+            }
+            else {
+              document.getElementById("day5WeatherIcon").src = weatherIcons[4]
+            }
             day6Title.innerHTML = days[day6Day];
             day6.innerHTML = "Min: " + Math.round(data.daily[5].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[5].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[5].pop + "%  " + data.daily[5].weather[0].description;
+            if (data.daily[5].weather[0].main === "Clouds") {
+              document.getElementById("day6WeatherIcon").src = weatherIcons[0];
+            }
+            else if (data.daily[5].weather[0].main === "Drizzle") {
+              document.getElementById("day6WeatherIcon").src = weatherIcons[1]
+            }
+            else if (data.daily[5].weather[0].main === "Rain") {
+              document.getElementById("day6WeatherIcon").src = weatherIcons[2]
+            }
+            else if (data.daily[5].weather[0].main === "Snow") {
+              document.getElementById("day6WeatherIcon").src = weatherIcons[3]
+            }
+            else if (data.daily[5].weather[0].main === "Clear") {
+              document.getElementById("day6WeatherIcon").src = weatherIcons[4]
+            }
+            else if (data.daily[5].weather[0].main == "Thunderstorm") {
+              document.getElementById("day6WeatherIcon").src = weatherIcons[5]
+            }
+            else {
+              document.getElementById("day6WeatherIcon").src = weatherIcons[4]
+            }
             day7Title.innerHTML = days[day7Day];
             day7.innerHTML = "Min: " + Math.round(data.daily[6].temp.min) + " °F" + ",  Max: " + Math.round(data.daily[6].temp.max) + " °F" + ", Chance of Rain: " + 100 * data.daily[6].pop + "%  " + data.daily[6].weather[0].description;
+            if (data.daily[6].weather[0].main === "Clouds") {
+              document.getElementById("day7WeatherIcon").src = weatherIcons[0];
+            }
+            else if (data.daily[6].weather[0].main === "Drizzle") {
+              document.getElementById("day7WeatherIcon").src = weatherIcons[1]
+            }
+            else if (data.daily[6].weather[0].main === "Rain") {
+              document.getElementById("day7WeatherIcon").src = weatherIcons[2]
+            }
+            else if (data.daily[6].weather[0].main === "Snow") {
+              document.getElementById("day7WeatherIcon").src = weatherIcons[3]
+            }
+            else if (data.daily[6].weather[0].main === "Clear") {
+              document.getElementById("day7WeatherIcon").src = weatherIcons[4]
+            }
+            else if (data.daily[6].weather[0].main == "Thunderstorm") {
+              document.getElementById("day7WeatherIcon").src = weatherIcons[5]
+            }
+            else {
+              document.getElementById("day7WeatherIcon").src = weatherIcons[4]
+            }
           }
         getWeeksWeather()
       })
