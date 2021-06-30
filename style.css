@@ -65,9 +65,13 @@ p4 {
 }
 
 .weeklyweather {
-  max-height: 150px;
+  max-height: 300px;
   display: flex;
   overflow-x: auto;
+}
+
+.weeklyweather::-webkit-scrollbar {
+  width: 0;
 }
 
 .weeklyweather .item {
@@ -81,4 +85,5 @@ p4 {
   border: 5px;
   border-color: white;
   border-radius: 10px;
+  margin-right: 2px;
 }
