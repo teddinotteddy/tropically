@@ -325,5 +325,8 @@ function visitCount() {
   console.log("Website total visit count: " + visits)
 }
 
-visitCount();
+window.onload = function() {
+  visitCount();
+};
+
 getWeather();
