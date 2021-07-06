@@ -7,7 +7,7 @@ html {
   border: 2.5px;
   border-radius: 10px;
   font-family: 'Josefin Sans', sans-serif;
-  cursor: url("/Users/londonbrown/Documents/GitHub/tropically/cursor.svg"), auto;
+  cursor: url("cursor.svg"), auto;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 .currentadvancedinfo {
   border: 2.5px;
   border-color: white;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
   border-style: solid;
 }
 
@@ -36,7 +36,7 @@ body {
 .nextdayadvancedinfo {
   border: 2.5px;
   border-color: white;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
   border-style: solid;
 }
 
@@ -87,4 +87,65 @@ p4 {
   border-color: white;
   border-radius: 10px;
   margin-right: 2px;
+}
+
+.hourlyweather {
+  max-height: 300px;
+  display: flex;
+  overflow-x: auto;
+  display: none;
+}
+
+.hourlyweather::-webkit-scrollbar {
+  width: 0;
+}
+
+.hourlyweather .item {
+  min-width: 150px;
+  margin-top: 3.5px;
+  height: 150px;
+  text-align: center;
+}
+
+.hourlyweather .item {
+  border: 5px;
+  border-color: white;
+  border-radius: 10px;
+  margin-right: 2px;
+}
+
+
+iframe {
+  width: 99%;
+  height: 100vh;
+  border-radius: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.nav {
+  background-color: white;
+  overflow: hidden;
+  border: 1.5px;
+  border-radius: 0px 0px 10px 10px;
+  border-color: white;
+}
+
+.nav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav a:hover {
+  background-color: lightblue;
+  color: white;
+}
+
+.nav a.active {
+  background-color: cyan;
+  color: white;
 }

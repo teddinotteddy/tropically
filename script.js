@@ -1,3 +1,21 @@
+function visitCount() {
+  var visits = Number(localStorage.getItem('visitCount'));
+  var current = Boolean(sessionStorage.getItem('session'));
+
+  if (!current) {
+    visits++;
+  }
+
+  localStorage.setItem('visitCount', visits);
+  sessionStorage.setItem('session', true);
+
+  console.log("Website total visit count: " + visits)
+}
+
+window.onload = function() {
+  visitCount();
+};
+
 function getTime() {
   var today = new Date();
   var now = today.getDay();
@@ -309,24 +327,6 @@ function getWeather() {
   function error() {
     location.innerHTML = "Unable to retrieve your location";
   }
-};
-
-function visitCount() {
-  var visits = Number(localStorage.getItem('visitCount'));
-  var current = Boolean(sessionStorage.getItem('session'));
-
-  if (!current) {
-    visits++;
-  }
-
-  localStorage.setItem('visitCount', visits);
-  sessionStorage.setItem('session', true);
-
-  console.log("Website total visit count: " + visits)
-}
-
-window.onload = function() {
-  visitCount();
 };
 
 getWeather();
