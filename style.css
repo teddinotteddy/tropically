@@ -7,7 +7,6 @@ html {
   border: 2.5px;
   border-radius: 10px;
   font-family: 'Josefin Sans', sans-serif;
-  cursor: url("cursor.svg"), auto;
 }
 
 body {
@@ -124,7 +123,7 @@ iframe {
 }
 
 .nav {
-  background-color: white;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
   overflow: hidden;
   border: 1.5px;
   border-radius: 0px 0px 10px 10px;
@@ -133,7 +132,7 @@ iframe {
 
 .nav a {
   float: left;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -141,8 +140,8 @@ iframe {
 }
 
 .nav a:hover {
-  background-color: lightblue;
-  color: white;
+  background: white;
+  color: cyan;
 }
 
 .nav a.active {
