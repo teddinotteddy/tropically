@@ -92,21 +92,20 @@ p4 {
   max-height: 300px;
   display: flex;
   overflow-x: auto;
-  display: none;
 }
 
 .hourlyweather::-webkit-scrollbar {
   width: 0;
 }
 
-.hourlyweather .item {
+.hourlyweather .stuff {
   min-width: 150px;
   margin-top: 3.5px;
   height: 150px;
   text-align: center;
 }
 
-.hourlyweather .item {
+.hourlyweather .stuff {
   border: 5px;
   border-color: white;
   border-radius: 10px;
@@ -115,8 +114,8 @@ p4 {
 
 
 iframe {
-  width: 99%;
-  height: 100vh;
+  width: 90%;
+  height: 90vh;
   border-radius: 15px;
   margin-top: 5px;
   margin-bottom: 5px;

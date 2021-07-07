@@ -311,6 +311,41 @@ function getWeather() {
             }
           }
         getWeeksWeather()
+
+        function getHourlyWeather() {
+          var today = new Date();
+          var hour = today.getHours();
+          var currentMinute = today.getMinutes();
+
+          let hour1 = (hour + 1 > 12) ? hour + 1 - 12: hour + 1;
+          let hour2 = (hour + 2 > 12) ? hour + 2 - 12: hour + 2;
+          let hour3 = (hour + 3 > 12) ? hour + 3 - 12: hour + 3;
+          let hour4 = (hour + 4 > 12) ? hour + 4 - 12: hour + 4;
+          let hour5 = (hour + 5 > 12) ? hour + 5 - 12: hour + 5;
+          let hour6 = (hour + 6 > 12) ? hour + 6 - 12: hour + 6;
+
+          hour1time.innerHTML = hour1 + ":" + currentMinute;
+          hour2time.innerHTML = hour2 + ":" + currentMinute;
+          hour3time.innerHTML = hour3 + ":" + currentMinute;
+          hour4time.innerHTML = hour4 + ":" + currentMinute;
+          hour5time.innerHTML = hour5 + ":" + currentMinute;
+          hour6time.innerHTML = hour6 + ":" + currentMinute;
+
+          hour1temp.innerHTML = "Temp: " + data.hourly[1].temp + " °F"
+          hour2temp.innerHTML = "Temp: " + data.hourly[2].temp + " °F"
+          hour3temp.innerHTML = "Temp: " + data.hourly[3].temp + " °F"
+          hour4temp.innerHTML = "Temp: " + data.hourly[4].temp + " °F"
+          hour5temp.innerHTML = "Temp: " + data.hourly[5].temp + " °F"
+          hour6temp.innerHTML = "Temp: " + data.hourly[6].temp + " °F"
+
+          hour1pop.innerHTML = "Chance of rain: " + 100 * data.hourly[1].pop + "%"
+          hour2pop.innerHTML = "Chance of rain: " + 100 * data.hourly[2].pop + "%"
+          hour3pop.innerHTML = "Chance of rain: " + 100 * data.hourly[3].pop + "%"
+          hour4pop.innerHTML = "Chance of rain: " + 100 * data.hourly[4].pop + "%"
+          hour5pop.innerHTML = "Chance of rain: " + 100 * data.hourly[5].pop + "%"
+          hour6pop.innerHTML = "Chance of rain: " + 100 * data.hourly[6].pop + "%"
+        }
+        getHourlyWeather()
       })
   function getAqi() {
           fetch(aq_url)
