@@ -9,6 +9,13 @@ html {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    color: white;
+    background: linear-gradient(to right top,#480080, #AC32D9);
+  }
+}
+
 body {
   background: white;
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));

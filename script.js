@@ -28,6 +28,7 @@ function getTime() {
   var dateTime = day + " - " + date + " - " + time;
   timing.innerHTML = dateTime;
 }
+
 window.setInterval(function() {
   getTime()
 }, 1000);
