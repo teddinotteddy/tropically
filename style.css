@@ -3,9 +3,6 @@ html {
   color: white;
   text-align: center;
   background: linear-gradient(to right top,#65DFC9, #6CDBEB);
-  border-color: white;
-  border: 2.5px;
-  border-radius: 10px;
   font-family: 'Josefin Sans', sans-serif;
 }
 
