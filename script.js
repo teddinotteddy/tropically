@@ -70,8 +70,6 @@ function getWeather() {
       apiKey +
       "&units=imperial";
 
-      console.log(weather_url)
-
     fetch(weather_url)
       .then(response => response.json())
       .then(data => {
@@ -88,7 +86,6 @@ function getWeather() {
         fetch(info_url)
           .then(response => response.json())
           .then(data => {
-            console.log(data);
             let area = data.name;
             location.innerHTML = area;
         });
@@ -124,7 +121,6 @@ function getWeather() {
         }
         let weatherIcons = ["Weather Icons/Cloudy.SVG", "Weather Icons/Drizzle.SVG", "Weather Icons/Rain.SVG", "Weather Icons/Snow.SVG", "Weather Icons/Sunny.SVG", "Weather Icons/Thunder.SVG"];
         function getWeatherIcons() {
-          console.log(data.current.weather[0].main)
           if (data.current.weather[0].main === "Clouds") {
             document.getElementById("weatherIcon").src = weatherIcons[0];
           }
@@ -185,7 +181,6 @@ function getWeather() {
         nextdaypercipation.innerHTML = "Humidity: " + nextDayHumidity + "%" + " , Chance of Rain: " + 100 * data.daily[1].pop + "%";
         nextdaycloudcover.innerHTML = "Cloud Cover: " + data.daily[1].clouds + "%";
         nextdayuvi.innerHTML = "UV Index: " + Math.round(data.daily[1].uvi);
-        console.log(data.daily);
           function getWeeksWeather() {
             var today = new Date();
             var now = today.getDay();
@@ -323,28 +318,31 @@ function getWeather() {
           let hour3 = (hour + 3 > 12) ? hour + 3 - 12: hour + 3;
           let hour4 = (hour + 4 > 12) ? hour + 4 - 12: hour + 4;
           let hour5 = (hour + 5 > 12) ? hour + 5 - 12: hour + 5;
-          let hour6 = (hour + 6 > 12) ? hour + 6 - 12: hour + 6;
 
           hour1time.innerHTML = hour1 + ":" + currentMinute;
           hour2time.innerHTML = hour2 + ":" + currentMinute;
           hour3time.innerHTML = hour3 + ":" + currentMinute;
           hour4time.innerHTML = hour4 + ":" + currentMinute;
           hour5time.innerHTML = hour5 + ":" + currentMinute;
-          hour6time.innerHTML = hour6 + ":" + currentMinute;
 
           hour1temp.innerHTML = "Temp: " + data.hourly[1].temp + " °F"
           hour2temp.innerHTML = "Temp: " + data.hourly[2].temp + " °F"
           hour3temp.innerHTML = "Temp: " + data.hourly[3].temp + " °F"
           hour4temp.innerHTML = "Temp: " + data.hourly[4].temp + " °F"
           hour5temp.innerHTML = "Temp: " + data.hourly[5].temp + " °F"
-          hour6temp.innerHTML = "Temp: " + data.hourly[6].temp + " °F"
 
           hour1pop.innerHTML = "Chance of rain: " + 100 * data.hourly[1].pop + "%"
           hour2pop.innerHTML = "Chance of rain: " + 100 * data.hourly[2].pop + "%"
           hour3pop.innerHTML = "Chance of rain: " + 100 * data.hourly[3].pop + "%"
           hour4pop.innerHTML = "Chance of rain: " + 100 * data.hourly[4].pop + "%"
           hour5pop.innerHTML = "Chance of rain: " + 100 * data.hourly[5].pop + "%"
-          hour6pop.innerHTML = "Chance of rain: " + 100 * data.hourly[6].pop + "%"
+
+          rainamount = "1h"
+          hour1amountofrain.innerHTML = data.hourly[1].rain[rainamount]
+          hour2amountofrain.innerHTML = data.hourly[2].rain[rainamount]
+          hour3amountofrain.innerHTML = data.hourly[3].rain[rainamount]
+          hour4amountofrain.innerHTML = data.hourly[4].rain[rainamount]
+          hour5amountofrain.innerHTML = data.hourly[5].rain[rainamount]
         }
         getHourlyWeather()
       })
