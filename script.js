@@ -331,18 +331,12 @@ function getWeather() {
           hour4temp.innerHTML = "Temp: " + data.hourly[4].temp + " °F"
           hour5temp.innerHTML = "Temp: " + data.hourly[5].temp + " °F"
 
-          hour1pop.innerHTML = "Chance of rain: " + 100 * data.hourly[1].pop + "%"
-          hour2pop.innerHTML = "Chance of rain: " + 100 * data.hourly[2].pop + "%"
-          hour3pop.innerHTML = "Chance of rain: " + 100 * data.hourly[3].pop + "%"
-          hour4pop.innerHTML = "Chance of rain: " + 100 * data.hourly[4].pop + "%"
-          hour5pop.innerHTML = "Chance of rain: " + 100 * data.hourly[5].pop + "%"
+          hour1pop.innerHTML = "Chance of rain: " + Math.round(100 * data.hourly[1].pop) + "%"
+          hour2pop.innerHTML = "Chance of rain: " + Math.round(100 * data.hourly[2].pop) + "%"
+          hour3pop.innerHTML = "Chance of rain: " + Math.round(100 * data.hourly[3].pop) + "%"
+          hour4pop.innerHTML = "Chance of rain: " + Math.round(100 * data.hourly[4].pop) + "%"
+          hour5pop.innerHTML = "Chance of rain: " + Math.round(100 * data.hourly[5].pop) + "%"
 
-          rainamount = "1h"
-          hour1amountofrain.innerHTML = data.hourly[1].rain[rainamount]
-          hour2amountofrain.innerHTML = data.hourly[2].rain[rainamount]
-          hour3amountofrain.innerHTML = data.hourly[3].rain[rainamount]
-          hour4amountofrain.innerHTML = data.hourly[4].rain[rainamount]
-          hour5amountofrain.innerHTML = data.hourly[5].rain[rainamount]
         }
         getHourlyWeather()
       })
