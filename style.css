@@ -151,3 +151,10 @@ iframe {
   background-color: cyan;
   color: white;
 }
+
+.scroll {
+  width: 100vw; // means 100% of viewport 
+  height: 50vh;// or change to whatever you want 
+  overflow: scroll;
+  overflow-x: hidden;
+}
