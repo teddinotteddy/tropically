@@ -69,7 +69,7 @@ p4 {
 }
 
 .weeklyweather {
-  width: 100vw;
+  width: 150px;
   max-height: 300px;
   display: flex;
   overflow-x: auto;
@@ -94,7 +94,7 @@ p4 {
 }
 
 .hourlyweather {
-  width: 100vw;
+  width: 150px;
   max-height: 300px;
   display: flex;
   overflow-x: auto;
@@ -105,7 +105,7 @@ p4 {
 }
 
 .hourlyweather .stuff {
-  width: 20vh;
+  min-width: 300px;
   margin-top: 3.5px;
   height: 150px;
   text-align: center;
