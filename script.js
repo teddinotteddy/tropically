@@ -27,7 +27,7 @@ function formatAMPM(date) {
   return strTime;
 }
 
-console.log(strTime)
+console.log(formatAMPM(new Date)
 
 function getTime() {
   var today = new Date();
