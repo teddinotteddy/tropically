@@ -198,6 +198,9 @@ function getWeather() {
         else if (data.current.temp <  data.daily[1].temp.day) {
             nextdaycomparison.innerHTML = "Tommorrow will be a bit hotter than today."
         }
+        else if (data.current.temp === data.daily[1].temp.day) {
+            nextdaycomparison.innerHTML = "Don't worry about tomorrow's weather it's the same as today."
+        }
           function getWeeksWeather() {
             var today = new Date();
             var now = today.getDay();
