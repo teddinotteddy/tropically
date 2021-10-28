@@ -192,10 +192,10 @@ function getWeather() {
         nextdaypercipation.innerHTML = "Humidity: " + nextDayHumidity + "%" + " , Chance of Rain: " + 100 * data.daily[1].pop + "%";
         nextdaycloudcover.innerHTML = "Cloud Cover: " + data.daily[1].clouds + "%";
         nextdayuvi.innerHTML = "UV Index: " + Math.round(data.daily[1].uvi);
-        if (Math.round(data.current.temp) > Math.round(data.daily[1].temp.day)) {
+        if (data.current.temp > data.daily[1].temp.day) {
             nextdaycomparison.innerHTML = "Tomorrow will be a bit more cool." 
         }
-        else if (Math.round(data.current.temp) <  Math.round(data.daily[1[.temp.day)) {
+        else if (data.current.temp <  data.daily[1[.temp.day) {
             nextdaycomparison.innerHTML = "Tommorrow will be a bit hotter than today."
         }
           function getWeeksWeather() {
