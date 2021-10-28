@@ -27,8 +27,6 @@ function formatAMPM(date) {
   return strTime;
 }
 
-console.log(formatAMPM(new Date))
-
 function getTime() {
   var today = new Date();
   var now = today.getDay();
@@ -38,7 +36,7 @@ function getTime() {
   var hour = today.getHours();
   var hoursIn12HrFormat = hour >= 13 ? hour %12: hour;
   var time =  hoursIn12HrFormat + ":" + today.getMinutes();
-  var dateTime = day + " - " + date + " - " + time;
+  var dateTime = day + " - " + date + " - " + formatAMPM(new Date);
   timing.innerHTML = dateTime;
 }
 
