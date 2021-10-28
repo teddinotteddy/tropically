@@ -72,7 +72,7 @@ p4 {
   width: 100vw;
   max-height: 300px;
   display: flex;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .weeklyweather::-webkit-scrollbar {
@@ -97,7 +97,7 @@ p4 {
   width: 100vw;
   max-height: 300px;
   display: flex;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .hourlyweather::-webkit-scrollbar {
@@ -105,7 +105,7 @@ p4 {
 }
 
 .hourlyweather .stuff {
-  min-width: 150px;
+  width: 20vh;
   margin-top: 3.5px;
   height: 150px;
   text-align: center;
