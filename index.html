@@ -1,162 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-   <link rel="icon" type="image/png" href="/Tropically logo.png"/>
+  <link rel="icon" type="image/png" href="/Tropically logo.png" />
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB88D5D2CL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QB88D5D2CL"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-QB88D5D2CL');
+      gtag("config", "G-QB88D5D2CL");
     </script>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="apple-touch-icon" href="/Tropically logo.png">
-    <meta name="theme-color"
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" href="/Tropically logo.png" />
+    <meta
+      name="theme-color"
       content="#FFC579"
-      media="(prefers-color-scheme: light)">
-    <meta name="theme-color"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
       content="AC32D9"
-      media="(prefers-color-scheme: dark)">
+      media="(prefers-color-scheme: dark)"
+    />
     <title>Tropically</title>
-    <meta name="description" content="A free, minimalistic, and accurate weather website.">
-    <meta name="keywords" content="minimalistic, free, accurate, weather, daily, weather website, weather app, free weather app, app,">
+    <meta
+      name="description"
+      content="A free, minimalistic, and accurate weather website."
+    />
+    <meta
+      name="keywords"
+      content="minimalistic, free, accurate, weather, daily, weather website, weather app, free weather app, app,"
+    />
     <meta content="Tropically" property="og:title" />
-    <meta content="A free, minimalistic, and accurate weather website." property="og:description" />
+    <meta
+      content="A free, minimalistic, and accurate weather website."
+      property="og:description"
+    />
     <meta content="https://embed.com/tropically.org" property="og:url" />
     <meta content="https://embed.com/Tropically logo.png" property="og:image" />
     <meta content="#ffc579" data-react-helmet="true" name="theme-color" />
   </head>
 
   <div class="basicinfo">
-    <h2> <br> </h2>
+    <h2><br /></h2>
     <h1 id="location">n/a</h1>
-    <h2 id="timing">n/a</h2>
-    <h3 id="temperature">n/a</h3>
-    <h4 id="minMax">n/a</h4>
+    <h2 id="temperature">n/a</h2>
+    <h3 id="minMax">n/a</h3>
   </div>
 
-<body>
-  <div class="currentadvancedinfo">
-    <h2> Current Weather </h2>
-    <img src="Weather Icons/Cloudy.SVG" id="weatherIcon" alt="Weather Icon">
-    <p></p>
-    <p1 id="typeofweather">n/a</p1>
-    <p></p>
-    <p2 id="precipitation">n/a</p2>
-    <p></p>
-    <p3 id="cloudcover">n/a</p3>
-    <p></p>
-    <p4 id="uvindex">n/a</p4>
-    <p></p>
-    <p5 id="windspeed">n/a</p5>
-    <p></p>
-    <p6 id="airqualityindex">n/a</p6>
-    <p></p>
-    <p7 id="remark">n/a</p7>
-    <p></p>
-
-    <h2> Hourly Weather </h2>
-    <div class="hourlyweather">
-      <div class="stuff">
-        <h3 id="hour1time">n/a</h3>
-        <p1 id="hour1temp">n/a</p1>
-        <p></p>
-        <p2 id="hour1pop">n/a</p2>
-        <p></p>
-      </div>
-      <div class="stuff">
-        <h3 id="hour2time">n/a</h3>
-        <p1 id="hour2temp">n/a</p1>
-        <p></p>
-        <p1 id="hour2pop">n/a</p1>
-        <p></p>
-      </div>
-      <div class="stuff">
-        <h3 id="hour3time">n/a</h3>
-        <p1 id="hour3temp">n/a</p1>
-        <p></p>
-        <p1 id="hour3pop">n/a</p1>
-        <p></p>
-      </div>
-      <div class="stuff">
-        <h3 id="hour4time">n/a</h3>
-        <p1 id="hour4temp">n/a</p1>
-        <p></p>
-        <p1 id="hour4pop">n/a</p1>
-        <p></p>
-      </div>
-      <div class="stuff">
-        <h3 id="hour5time">n/a</h3>
-        <p1 id="hour5temp">n/a</p1>
-        <p></p>
-        <p1 id="hour5pop">n/a</p1>
-        <p></p>
-      </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="nextdayadvancedinfo">
-    <h2> Tomorrow's Weather </h2>
-    <h2 id="nextdaytemp">n/a<h2>
-    <h3 id="tomorrowMinMax">n/a</h3>
-    <img src="Weather Icons/Cloudy.SVG" id="tomorrowWeatherIcon" alt="Tomorrow Weather Icon">
-
-    <p id="nextdaydescription">n/a</p>
-    <p1 id="nextdaypercipation">n/a</p1>
-    <p></p>
-    <p2 id="nextdaycloudcover">n/a</p2>
-    <p></p>
-    <p3 id="nextdayuvi">n/a</p3>
-    <p></p>
-    <p4 id="nextdaycomparison">n/a</p4>
-    <p></p>
-  </div>
-
-  <div class="weeklyweather">
-    <div class="item">
-      <h3 id="day3Title">n/a</h3>
-      <img src="Weather Icons/Cloudy.SVG" id="day3WeatherIcon" alt="Tomorrow Weather Icon" width="100px" height="100px">
+  <body>
+    <div class="currentadvancedinfo">
+      <h2>Current Weather</h2>
+      <h3 id="timing">n/a</h3>
+      <img src="Weather Icons/Cloudy.SVG" id="weatherIcon" alt="Weather Icon" />
       <p></p>
-      <p1 id="day3">n/a</p1>
-    </div>
-    <div class="item">
-      <h3 id="day4Title">n/a</h3>
-      <img src="Weather Icons/Cloudy.SVG" id="day4WeatherIcon" alt="Tomorrow Weather Icon" width="100px" height="100px">
+      <p1 id="typeofweather">n/a</p1>
       <p></p>
-      <p1 id="day4">n/a</p1>
-    </div>
-    <div class="item">
-      <h3 id="day5Title">n/a</h3>
-      <img src="Weather Icons/Cloudy.SVG" id="day5WeatherIcon" alt="Tomorrow Weather Icon" width="100px" height="100px">
+      <p2 id="precipitation">n/a</p2>
       <p></p>
-      <p1 id="day5">n/a</p1>
-    </div>
-    <div class="item">
-      <h3 id="day6Title">n/a</h3>
-      <img src="Weather Icons/Cloudy.SVG" id="day6WeatherIcon" alt="Tomorrow Weather Icon" width="100px" height="100px">
+      <p3 id="cloudcover">n/a</p3>
       <p></p>
-      <p1 id="day6">n/a</p1>
-    </div>
-    <div class="item">
-      <h3 id="day7Title">n/a</h3>
-      <img src="Weather Icons/Cloudy.SVG" id="day7WeatherIcon" alt="Tomorrow Weather Icon" width="100px" height="100px">
+      <p4 id="uvindex">n/a</p4>
       <p></p>
-      <p1 id="day7">n/a</p1>
-    </div>
-  </div>
-</body>
+      <p5 id="windspeed">n/a</p5>
+      <p></p>
+      <p6 id="airqualityindex">n/a</p6>
+      <p></p>
+      <p7 id="remark">n/a</p7>
+      <p></p>
 
+      <h2>Hourly Weather</h2>
+      <div class="hourlyweather">
+        <div class="stuff">
+          <h3 id="hour1time">n/a</h3>
+          <p1 id="hour1temp">n/a</p1>
+          <p></p>
+          <p2 id="hour1pop">n/a</p2>
+          <p></p>
+        </div>
+        <div class="stuff">
+          <h3 id="hour2time">n/a</h3>
+          <p1 id="hour2temp">n/a</p1>
+          <p></p>
+          <p1 id="hour2pop">n/a</p1>
+          <p></p>
+        </div>
+        <div class="stuff">
+          <h3 id="hour3time">n/a</h3>
+          <p1 id="hour3temp">n/a</p1>
+          <p></p>
+          <p1 id="hour3pop">n/a</p1>
+          <p></p>
+        </div>
+        <div class="stuff">
+          <h3 id="hour4time">n/a</h3>
+          <p1 id="hour4temp">n/a</p1>
+          <p></p>
+          <p1 id="hour4pop">n/a</p1>
+          <p></p>
+        </div>
+        <div class="stuff">
+          <h3 id="hour5time">n/a</h3>
+          <p1 id="hour5temp">n/a</p1>
+          <p></p>
+          <p1 id="hour5pop">n/a</p1>
+          <p></p>
+        </div>
+      </div>
+    </div>
 
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css">
+    <div class="nextdayadvancedinfo">
+      <h2>Tomorrow's Weather</h2>
+      <h2 id="nextdaytemp">
+        n/a
+        <h2>
+          <h3 id="tomorrowMinMax">n/a</h3>
+          <img
+            src="Weather Icons/Cloudy.SVG"
+            id="tomorrowWeatherIcon"
+            alt="Tomorrow Weather Icon"
+          />
+
+          <p id="nextdaydescription">n/a</p>
+          <p1 id="nextdaypercipation">n/a</p1>
+          <p></p>
+          <p2 id="nextdaycloudcover">n/a</p2>
+          <p></p>
+          <p3 id="nextdayuvi">n/a</p3>
+          <p></p>
+          <p4 id="nextdaycomparison">n/a</p4>
+          <p></p>
+
+          <div class="weeklyweather">
+            <div class="item">
+              <h3 id="day3Title">n/a</h3>
+              <img
+                src="Weather Icons/Cloudy.SVG"
+                id="day3WeatherIcon"
+                alt="Tomorrow Weather Icon"
+                width="100px"
+                height="100px"
+              />
+              <p></p>
+              <p1 id="day3">n/a</p1>
+            </div>
+            <div class="item">
+              <h3 id="day4Title">n/a</h3>
+              <img
+                src="Weather Icons/Cloudy.SVG"
+                id="day4WeatherIcon"
+                alt="Tomorrow Weather Icon"
+                width="100px"
+                height="100px"
+              />
+              <p></p>
+              <p1 id="day4">n/a</p1>
+            </div>
+            <div class="item">
+              <h3 id="day5Title">n/a</h3>
+              <img
+                src="Weather Icons/Cloudy.SVG"
+                id="day5WeatherIcon"
+                alt="Tomorrow Weather Icon"
+                width="100px"
+                height="100px"
+              />
+              <p></p>
+              <p1 id="day5">n/a</p1>
+            </div>
+            <div class="item">
+              <h3 id="day6Title">n/a</h3>
+              <img
+                src="Weather Icons/Cloudy.SVG"
+                id="day6WeatherIcon"
+                alt="Tomorrow Weather Icon"
+                width="100px"
+                height="100px"
+              />
+              <p></p>
+              <p1 id="day6">n/a</p1>
+            </div>
+            <div class="item">
+              <h3 id="day7Title">n/a</h3>
+              <img
+                src="Weather Icons/Cloudy.SVG"
+                id="day7WeatherIcon"
+                alt="Tomorrow Weather Icon"
+                width="100px"
+                height="100px"
+              />
+              <p></p>
+              <p1 id="day7">n/a</p1>
+            </div>
+          </div>
+
+          <script src="script.js"></script>
+          <link rel="stylesheet" href="style.css" />
+        </h2>
+      </h2>
+    </div>
+  </body>
 </html>

@@ -2,20 +2,24 @@ html {
   font-family: JosefinSans-Regular;
   color: white;
   text-align: center;
-  background: linear-gradient(to right top,#FFA0BF, #FFC579);
-  font-family: 'Josefin Sans', sans-serif;
+  background: linear-gradient(to right top, #ffa0bf, #ffc579);
+  font-family: "Josefin Sans", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color: white;
-    background: linear-gradient(to right top,#480080, #AC32D9);
+    background: linear-gradient(to right top, #480080, #ac32d9);
   }
 }
 
 body {
   background: white;
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.2)
+  );
   border-radius: 1rem;
 }
 
@@ -117,7 +121,6 @@ p4 {
   border-radius: 10px;
   margin-right: 2px;
 }
-
 
 iframe {
   width: 90%;
