@@ -126,30 +126,3 @@ iframe {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
-.nav {
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
-  overflow: hidden;
-  border: 1.5px;
-  border-radius: 0px 0px 10px 10px;
-  border-color: white;
-}
-
-.nav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.nav a:hover {
-  background: white;
-  color: cyan;
-}
-
-.nav a.active {
-  background-color: cyan;
-  color: white;
-}
