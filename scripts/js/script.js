@@ -1,21 +1,3 @@
-function visitCount() {
-  var visits = Number(localStorage.getItem("visitCount"));
-  var current = Boolean(sessionStorage.getItem("session"));
-
-  if (!current) {
-    visits++;
-  }
-
-  localStorage.setItem("visitCount", visits);
-  sessionStorage.setItem("session", true);
-
-  console.log("Website total visit count: " + visits);
-}
-
-window.onload = function () {
-  visitCount();
-};
-
 function formatAMPM(date) {
   var hours = date.getHours();
   var minutes = date.getMinutes();
@@ -109,7 +91,6 @@ function getWeather() {
             let area = data.name;
             location.innerHTML = area;
           });
-        console.log(data);
         let temp = Math.round(data.current.temp);
         let {
           humidity,
@@ -454,7 +435,6 @@ function getWeather() {
       fetch(aq_url)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           let aqi = data.list[0].main.aqi;
           airqualityindex.innerHTML = "Air Quality Index: " + aqi;
         });
