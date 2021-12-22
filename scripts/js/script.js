@@ -174,12 +174,12 @@ function getWeather() {
           remark.innerHTML = randomMid;
         }
         let weatherIcons = [
-          "Weather Icons/Cloudy.SVG",
-          "Weather Icons/Drizzle.SVG",
-          "Weather Icons/Rain.SVG",
-          "Weather Icons/Snow.SVG",
-          "Weather Icons/Sunny.SVG",
-          "Weather Icons/Thunder.SVG",
+          "./static/images/Weather Icons/Cloudy.SVG",
+          "./static/images/Weather Icons/Drizzle.SVG",
+          "./static/images/Weather Icons/Rain.SVG",
+          "./static/images/Weather Icons/Snow.SVG",
+          "./static/images/Weather Icons/Sunny.SVG",
+          "./static/images/Weather Icons/Thunder.SVG",
         ];
         function getWeatherIcons() {
           if (data.current.weather[0].main === "Clouds") {
