@@ -75,6 +75,7 @@ function getWeather() {
     fetch(weather_url)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         let api = "https://api.openweathermap.org/data/2.5/weather";
         let info_url =
           api +
