@@ -62,6 +62,8 @@ function getWeather() {
       apiKey +
       "&units=imperial";
 
+    console.log(weather_url)
+    
     let aq_url =
       aq_api +
       "?lat=" +
