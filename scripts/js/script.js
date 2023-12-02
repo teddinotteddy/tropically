@@ -42,7 +42,7 @@ function getWeather() {
 
   let weather_api = "https://api.openweathermap.org/data/2.5/onecall";
   let aq_api = "https://api.openweathermap.org/data/2.5/air_pollution";
-  let apiKey = procces.env.API_KEY;
+  let apiKey = "ca676571878294269458ad76e22c6693";
 
   location.innerHTML = "Locating...";
 
